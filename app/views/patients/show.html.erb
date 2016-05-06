@@ -1,0 +1,14 @@
+<div class="col-md-2"></div>
+<div class="col-md-8">
+	<div class="panel panel-default">
+	  <div class="panel-heading"><%= @patient.name %></div>
+	  	<div class="panel-body">
+			<p class="register_number">Nome: <%= @patient.name %></p>
+			<p class="status">Email: <%= @patient.user.email %></p>
+			<p class="actions">
+				<%= link_to 'Editar', edit_patient_path(@patient), class:'btn btn-primary pull-left' %>
+				<%= link_to 'Excluir', patient_path(@patient), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger pull-right' %>
+			</p>
+		</div>
+	</div>
+</div>

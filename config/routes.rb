@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   
+  resources :patients
   devise_for :users, controllers: { sessions: "users/sessions" }
 
   # The priority is based upon order of creation: first created -> highest priority.
