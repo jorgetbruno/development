@@ -1,2 +1,21 @@
 <h1>Medics#index</h1>
 <p>Find me in app/views/medics/index.html.erb</p>
+<h2>Estudantes <%= link_to 'Criar', new_medic_path, class:"btn btn-success pull-right" %></h2>
+<br>
+<table class="table table-hover">
+	<tr>
+		<th>Nome</th>
+		<th>Usuário</th>
+		<th>Ações</th>
+		<th></th>
+	</tr>
+	<% @medics.each do |medic| %>
+	<tr>
+		<th><%= medic.name %></th>
+		<th><%= medic.user_id %></th>
+		<th><%= link_to 'Editar', edit_patient_path(medic) %></th>
+		<th><%= link_to 'Excluir', patient_path(medic), method: :delete, data: { confirm: 'Are you sure?', class:'btn btn-link' } %></th>
+	</tr>
+	<% end %>
+</table>
+

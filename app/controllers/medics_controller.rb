@@ -1,5 +1,6 @@
 class MedicsController < ApplicationController
   def index
+    @medics = Medic.all
   end
   def new
     @medic = Medic.new
