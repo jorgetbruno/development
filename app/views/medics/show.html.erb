@@ -6,8 +6,9 @@
 			<p class="register_number">Nome: <%= @medic.name %></p>
 
 			<p class="actions">
-				<%= link_to 'Editar', edit_patient_path(@medic), class:'btn btn-primary pull-left' %>
-				<%= link_to 'Excluir', patient_path(@medic), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger pull-right' %>
+				<%= link_to 'Editar', edit_medic_path(@medic), class:'btn btn-primary pull-left' %>
+				<%= link_to 'Excluir', medic_path(@medic), method: :delete, data: { confirm: 'Are you sure?' } %>
+				<%= link_to 'Index', medics_path(),method: :index ,class:'btn btn-primary pull-left' %>
 			</p>
 		</div>
 	</div>
