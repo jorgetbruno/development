@@ -6,6 +6,10 @@ class NursesController < ApplicationController
     @nurse = Nurse.new
   end
   
+  def show
+		@nurse = Nurse.find(params[:id])
+  end
+  
   def create
     @nurse = Nurse.new(nurse_params)
 
