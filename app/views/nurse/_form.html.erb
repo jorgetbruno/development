@@ -1,0 +1,25 @@
+<%= form_for @nurse do |f| %>
+	<% if @nurse.errors.any? %>
+		<div id="errors">
+			<h2><%= pluralize(@nurse.errors.count, "error") %> prevented this nurse from saving:</h2>
+			<ul>
+				<% @nurse.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<%= f.label :name, "Nome" %><br>
+	<%= f.text_field :name, placeholder:"Digite o nome do enfermeiro", required:"", class:"form-control" %>
+	<br>
+	
+	<br>
+
+	<%= f.label :userId, "user id" %><br>
+	<%= f.text_field :user_id, placeholder:"Digite o id", required:"", class:"form-control" %>
+
+	<br>
+
+	<%= f.submit "Ok", class: "btn btn-success" %>
+<% end %>
