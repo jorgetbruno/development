@@ -35,6 +35,13 @@ class NursesController < ApplicationController
 		end
 	end
   
+  def destroy
+		@nurse = Nurse.find(params[:id])
+		@nurse.destroy
+
+		redirect_to nurses_path
+  end
+  
 	private
 
 	def nurse_params

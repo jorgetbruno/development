@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   
   resources :patients
-  resources : nurses
+  resources :nurses
   resources :medics
   devise_for :users, controllers: { sessions: "users/sessions" }
 
