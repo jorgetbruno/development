@@ -21,6 +21,20 @@ class NursesController < ApplicationController
 	  end
   end
   
+  def edit
+		@nurse = Nurse.find(params[:id])
+  end
+  
+	def update
+		@nurse = Nurse.find(params[:id])
+
+		if @nurse.update(params[:nurse].permit(:name, :user_id))
+			redirect_to @nurse
+		else
+			render 'edit'
+		end
+	end
+  
 	private
 
 	def nurse_params
