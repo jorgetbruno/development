@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'medics/index'
+
   root 'welcome#index'
   
   resources :patients
