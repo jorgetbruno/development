@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  get 'nurses/index'
+
   get 'medics/index'
 
   root 'welcome#index'
   
   resources :patients
+  resources : nurses
   resources :medics
   devise_for :users, controllers: { sessions: "users/sessions" }
 
