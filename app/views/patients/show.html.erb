@@ -6,8 +6,9 @@
 			<p class="register_number">Nome: <%= @patient.name %></p>
 			<p class="status">Email: <%= @patient.user.email %></p>
 			<p class="actions">
-				<%= link_to 'Editar', edit_patient_path(@patient), class:'btn btn-primary pull-left' %>
-				<%= link_to 'Excluir', patient_path(@patient), method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger pull-right' %>
+				<%= link_to 'Editar', edit_patient_path(@patient) %>
+				
+				<%= link_to 'Destroy',  { action: :destroy, id: @patient.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
 			</p>
 		</div>
 	</div>

@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  get 'nurses/index'
+
+  get 'medics/index'
+
   root 'welcome#index'
   
   resources :patients
+  resources :nurses
+  resources :medics
   devise_for :users, controllers: { sessions: "users/sessions" }
 
   # The priority is based upon order of creation: first created -> highest priority.
