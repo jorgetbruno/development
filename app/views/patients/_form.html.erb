@@ -11,15 +11,15 @@
 	<% end %>
 	
 	<%= f.label :name, "Nome" %><br>
-	<%= f.text_field :name, placeholder:"Digite o nome do aluno", required:"", class:"form-control" %>
+	<%= f.text_field :name, placeholder:"Digite o nome do paciente", required:"" %>
 	<br>
 	
 	<br>
 
-	<%= f.label :userId, "user id" %><br>
-	<%= f.text_field :user_id, placeholder:"Digite o id", required:"", class:"form-control" %>
+	<%= f.label :userId, "" %><br>
+	<%= f.collection_select(:user_id, :author_id, Author.all, :id, :name_with_initial, prompt: true) %>
 
 	<br>
 
-	<%= f.submit "Ok", class: "btn btn-success" %>
+	<%= f.submit "Ok" %>
 <% end %>
