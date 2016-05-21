@@ -1,0 +1,19 @@
+<h2>Estudantes <%= link_to 'Criar', new_patient_path, class:"btn btn-success pull-right" %></h2>
+<br>
+<table class="table table-hover">
+	<tr>
+		<th>Nome</th>
+		<th>Usuário</th>
+		<th>Ações</th>
+		<th></th>
+	</tr>
+	<% @patients.each do |patient| %>
+	<tr>
+		<th><%= patient.name %></th>
+		<th><%= patient.user_id %></th>
+		<th><%= link_to 'Editar', edit_patient_path(patient) %></th>
+		<th><%= link_to 'Excluir', patient_path(patient), method: :delete, data: { confirm: 'Are you sure?' } %></th>
+	</tr>
+	<% end %>
+</table>
+<%= paginate @patients %>

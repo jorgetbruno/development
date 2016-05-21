@@ -1,0 +1,15 @@
+<div class="col-md-2"></div>
+<div class="col-md-8">
+	<div class="panel panel-default">
+	  <div class="panel-heading"><%= @medic.name %></div>
+	  	<div class="panel-body">
+			<p class="register_number">Nome: <%= @medic.name %></p>
+
+			<p class="actions">
+				<%= link_to 'Editar', edit_medic_path(@medic), class:'btn btn-primary pull-left' %>
+				<%= link_to 'Excluir', medic_path(@medic), method: :delete, data: { confirm: 'Are you sure?' } %>
+				<%= link_to 'Index', medics_path() %>
+			</p>
+		</div>
+	</div>
+</div>
