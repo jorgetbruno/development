@@ -1,9 +1,9 @@
 <div class="col-md-2"></div>
 <div class="col-md-8">
 	<div class="panel panel-default">
-	  <div class="panel-heading"></div>
+	  <div class="panel-heading"><%= @medic.name %></div>
 	  	<div class="panel-body">
-			<p class="register_number">Nome do Médico Cadastrado: <%= @medic.name %></p>
+			<p class="register_number">Nome: <%= @medic.name %></p>
 
 			<p class="actions">
 				<%= link_to 'Editar', edit_medic_path(@medic), class:'btn btn-primary pull-left' %>

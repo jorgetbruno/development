@@ -1,20 +1,21 @@
-<table border="1" class="table table-hover">
-	<tr><center><h2>Medicos Do Hospital</h2></center></tr>
+<h1>Medics#index</h1>
+<p>Find me in app/views/medics/index.html.erb</p>
+<h2>Medicos <%= link_to 'Criar', new_medic_path, class:"btn btn-success pull-right" %></h2>
+<br>
+<table class="table table-hover">
 	<tr>
-		<th>Nome do Médico</th>
-		<th>Especialidade</th>
-		<th>Dias de Atendimento</th>
-		<th>Horário de Atendimento</th>
+		<th>Nome</th>
+		<th>Usuário</th>
 		<th>Ações</th>
+		<th></th>
 	</tr>
 	<% @medics.each do |medic| %>
 	<tr>
 		<th><%= medic.name %></th>
-		<th><%= medic.dadosM %></th>
-		<th><%= medic.diasM %></th>
-		<th><%= medic.horasM %></th>
-
+		<th><%= medic.user_id %></th>
+		<th><%= link_to 'Editar', edit_medic_path(medic) %></th>
+		<th><%= link_to 'Excluir', medic_path(medic), method: :delete, data: { confirm: 'Are you sure?' } %></th>
 	</tr>
 	<% end %>
 </table>
-	
+
