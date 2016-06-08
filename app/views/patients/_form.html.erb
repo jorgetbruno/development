@@ -15,7 +15,7 @@
 	<br>
 
 	<%= f.label :userId, "Usuário" %><br>
-	<%= f.collection_select(:user_id, :author_id, Author.all, :id, :name_with_initial, prompt: true) %>
+	<%= f.collection_select(:user_id, User.all) %>
 	<br>
 
 	<%= f.submit "Ok" %>
