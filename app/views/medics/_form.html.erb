@@ -16,9 +16,8 @@
 	
 	<br>
 
-	<%= f.label :userId, "user id" %><br>
-	<%= f.text_field :user_id, placeholder:"Digite o id", required:"", class:"form-control" %>
-
+	<%= f.label :userId, "Usuário" %><br>
+	<%= f.collection_select :id, User.all, :id, :email %>
 	<br>
 
 	<%= f.submit "Ok", class: "btn btn-success" %>

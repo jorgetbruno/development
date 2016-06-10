@@ -1,0 +1,14 @@
+<div class="col-md-2"></div>
+<div class="col-md-8">
+	<div class="panel panel-default">
+	  <div class="panel-heading">Administrador</div>
+	  	<div class="panel-body">
+			<p class="register_number">Nome: <%= @admin.name %></p>
+			<p class="status">Email: <%#= @admin.user.email %></p>
+			<p class="actions">
+				<%= link_to 'Editar', edit_admin_path(@admin) %>
+				
+				<%= link_to 'Destroy',  { action: :destroy, id: @admin.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
+			</p>
+		</div>
+	</div>
