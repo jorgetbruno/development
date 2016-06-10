@@ -1,0 +1,12 @@
+<%= form_for @admin, :url => admins_path(@admin), :html => {:method => :post} do |f| %>
+	
+	<%= f.label :name, "Nome" %><br>
+	<%= f.text_field :name, placeholder:"Digite o nome do Administrador", required:"", autofocus: true %>
+	<br>
+	
+	<%= f.label :userId, "Usuário" %><br>
+	<%= f.collection_select :id, User.all, :id, :email %>
+	<br>
+
+	<%= f.submit "Ok" %>
+<% end %>

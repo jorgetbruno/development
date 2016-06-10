@@ -1,20 +1,19 @@
 <h1>Medics#index</h1>
-<p>Find me in app/views/medics/index.html.erb</p>
-<h2>Medicos <%= link_to 'Criar', new_medic_path, class:"btn btn-success pull-right" %></h2>
+<h2>Medicos <%= link_to 'Criar', new_admin_path, class:"btn btn-success pull-right" %></h2>
 <br>
 <table class="table table-hover">
 	<tr>
 		<th>Nome</th>
-		<th>Usuário</th>
+		<th>Email</th>
 		<th>Ações</th>
 		<th></th>
 	</tr>
-	<% @medics.each do |medic| %>
+	<% @admins.each do |admin| %>
 	<tr>
-		<th><%= medic.name %></th>
-		<th><%= medic.user_id %></th>
-		<th><%= link_to 'Editar', edit_medic_path(medic) %></th>
-		<th><%= link_to 'Excluir', medic_path(medic), method: :delete, data: { confirm: 'Are you sure?' } %></th>
+		<th><%= admin.name %></th>
+		<th><%= admin.user.email %></th>
+		<th><%= link_to 'Editar', edit_admin_path(admin) %></th>
+		<th><%= link_to 'Excluir', admin_path(admin), method: :delete, data: { confirm: 'Are you sure?' } %></th>
 	</tr>
 	<% end %>
 </table>
