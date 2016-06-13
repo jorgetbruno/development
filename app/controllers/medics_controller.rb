@@ -28,7 +28,7 @@ class MedicsController < ApplicationController
 	def update
 		@medic = Medic.find(params[:id])
 
-		if @medic.update(params[:medic].permit(:name, :user_id))
+		if @medic.update(params[:medic].permit(:name, :user_id, :crm, :emailM, :dadosM, :cpfM, :ddnM, :telM, :endM, :brM, :cepM, :cidM, :estM, :horasM, :diasM))
 			redirect_to @medic
 		else
 			render 'edit'
@@ -45,6 +45,6 @@ class MedicsController < ApplicationController
 	private
 
 	def medic_params
-		params.require(:medic).permit(:name, :user_id)
+		params.require(:medic).permit(:name, :user_id, :crm, :emailM, :dadosM, :cpfM, :ddnM, :telM, :endM, :brM, :cepM, :cidM, :estM, :horasM, :diasM)
 	end
 end
