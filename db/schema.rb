@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160605042840) do
+ActiveRecord::Schema.define(version: 20160505234503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,19 @@ ActiveRecord::Schema.define(version: 20160605042840) do
   create_table "medics", force: :cascade do |t|
     t.string   "name"
     t.integer  "user_id"
+    t.string   "crm"
+    t.string   "emailM"
+    t.text     "dadosM"
+    t.string   "cpfM"
+    t.string   "ddnM"
+    t.string   "telM"
+    t.string   "endM"
+    t.string   "brM"
+    t.string   "cepM"
+    t.string   "cidM"
+    t.string   "estM"
+    t.string   "diasM"
+    t.string   "horasM"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -39,7 +52,6 @@ ActiveRecord::Schema.define(version: 20160605042840) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "coren"
   end
 
   add_index "nurses", ["user_id"], name: "index_nurses_on_user_id", using: :btree
