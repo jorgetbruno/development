@@ -5,10 +5,13 @@
 		<th>Especialidade</th>
 		<th>Dias de Atendimento</th>
 		<th>Horário de Atendimento</th>
-		<th>Ações</th>
+		
 	</tr>
+	
 	<% @medics.each do |medic| %>
+	
 	<tr>
+	
 		<th><%= medic.name %></th>
 		<th><%= medic.dadosM %></th>
 		<th><%= medic.diasM %></th>
