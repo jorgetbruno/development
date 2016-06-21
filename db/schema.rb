@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 20160505234503) do
   enable_extension "plpgsql"
 
   create_table "admins", force: :cascade do |t|
-    t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,7 +25,6 @@ ActiveRecord::Schema.define(version: 20160505234503) do
   add_index "admins", ["user_id"], name: "index_admins_on_user_id", using: :btree
 
   create_table "medics", force: :cascade do |t|
-    t.string   "name"
     t.integer  "user_id"
     t.string   "crm"
     t.string   "emailM"
@@ -41,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160505234503) do
     t.string   "estM"
     t.string   "diasM"
     t.string   "horasM"
+    t.string   "coren"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -48,7 +47,6 @@ ActiveRecord::Schema.define(version: 20160505234503) do
   add_index "medics", ["user_id"], name: "index_medics_on_user_id", using: :btree
 
   create_table "nurses", force: :cascade do |t|
-    t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -57,7 +55,6 @@ ActiveRecord::Schema.define(version: 20160505234503) do
   add_index "nurses", ["user_id"], name: "index_nurses_on_user_id", using: :btree
 
   create_table "patients", force: :cascade do |t|
-    t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -76,6 +73,24 @@ ActiveRecord::Schema.define(version: 20160505234503) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "name",                                null: false
+    t.integer  "lot"
+    t.string   "block"
+    t.integer  "number"
+    t.string   "street",                              null: false
+    t.string   "neighborhood",                        null: false
+    t.string   "complement"
+    t.string   "city",                                null: false
+    t.string   "state",                               null: false
+    t.string   "country",                             null: false
+    t.integer  "cep",                                 null: false
+    t.integer  "phoneOne",                            null: false
+    t.integer  "phoneTwo"
+    t.integer  "phoneThree"
+    t.integer  "cpf",                                 null: false
+    t.integer  "rg",                                  null: false
+    t.integer  "rgExpeditor",                         null: false
+    t.date     "birthday",                            null: false
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
