@@ -1,7 +1,6 @@
 class CreateMedics < ActiveRecord::Migration
   def change
     create_table :medics do |t|
-		t.string :name
 		t.belongs_to :user, index: true
 		t.string :crm
 		t.string :emailM
@@ -17,6 +16,7 @@ class CreateMedics < ActiveRecord::Migration
 		t.string :estM
 		t.string :diasM
 		t.string :horasM
+		t.string :coren
 	  
       t.timestamps null: false
     end
