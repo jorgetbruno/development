@@ -16,7 +16,6 @@ class CreateMedics < ActiveRecord::Migration
 		t.string :estM
 		t.string :diasM
 		t.string :horasM
-		t.string :coren
 	  
       t.timestamps null: false
     end
