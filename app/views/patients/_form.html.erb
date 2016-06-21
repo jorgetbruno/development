@@ -9,10 +9,6 @@
 			</ul>
 		</div>
 	<% end %>
-	
-	<%= f.label :name, "Nome" %><br>
-	<%= f.text_field :name, placeholder:"Digite o nome do paciente", required:"" %>
-	<br>
 
 	<%= f.label :userId, "Usuário" %><br>
 	<%= f.collection_select :id, User.all, :id, :email %>
