@@ -7,7 +7,7 @@
 			<p class="status">Email: <%= @patient.user.email %></p>
 			<p class="actions">
 				<%= link_to 'Editar', edit_patient_path(@patient) %>
-				
+
 				<%= link_to 'Destroy',  { action: :destroy, id: @patient.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
 			</p>
 		</div>

@@ -28,7 +28,7 @@ class NursesController < ApplicationController
 	def update
 		@nurse = Nurse.find(params[:id])
 
-		if @nurse.update(params[:nurse].permit(:name, :user_id, :coren))
+		if @nurse.update(params[:nurse].permit(:user_id, :coren))
 			redirect_to @nurse
 		else
 			render 'edit'
@@ -45,6 +45,6 @@ class NursesController < ApplicationController
 	private
 
 	def nurse_params
-		params.require(:nurse).permit(:name, :user_id, :coren)
+		params.require(:nurse).permit(:user_id, :coren)
 	end
 end
