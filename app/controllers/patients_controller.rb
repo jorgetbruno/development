@@ -28,7 +28,7 @@ class PatientsController < ApplicationController
 	def update
 		@patient = Patient.find(params[:id])
 
-		if @patient.update(params[:patient].permit(:name, :user_id))
+		if @patient.update(params[:patient].permit(:user_id,:motherName,:fatherName,:occupation,:observation))
 			redirect_to @patient
 		else
 			render 'edit'
@@ -45,6 +45,6 @@ class PatientsController < ApplicationController
 	private
 
 	def patient_params
-		params.require(:patient).permit(:name, :user_id)
+		params.require(:patient).permit(:user_id,:motherName,:fatherName,:occupation,:observation)
 	end
 end

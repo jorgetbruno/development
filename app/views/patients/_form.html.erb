@@ -14,5 +14,25 @@
 	<%= f.collection_select :id, User.all, :id, :email %>
 	<br>
 
+	<%= f.label :motherName, "" %>
+	<%= f.text_field :motherName, placeholder:"",
+	required:"", class:"form-control" %>
+	<br>
+
+	<%= f.label :fatherName, "" %>
+	<%= f.text_field :fatherName, placeholder:"",
+	class:"form-control" %>
+	<br>
+
+	<%= f.label :occupation, "" %>
+	<%= f.text_field :occupation, placeholder:"",
+	required:"", class:"form-control" %>
+	<br>
+
+	<%= f.label :observation, "" %>
+	<%= f.text_area :observation, placeholder:"",
+	class:"form-control" %>
+	<br>
+
 	<%= f.submit "Ok" %>
 <% end %>

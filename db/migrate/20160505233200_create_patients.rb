@@ -5,7 +5,7 @@ class CreatePatients < ActiveRecord::Migration
 
       t.string  :motherName       , null: false
       t.string  :fatherName
-      t.text    :occupation
+      t.string  :occupation
       t.text    :observation
 
 
