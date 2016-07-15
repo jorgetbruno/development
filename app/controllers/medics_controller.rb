@@ -2,15 +2,15 @@ class MedicsController < ApplicationController
   def index
     @medics = Medic.all
   end
-  
+
   def new
     @medic = Medic.new
   end
-  
+
   def show
 		@medic = Medic.find(params[:id])
   end
-  
+
   def create
     @medic = Medic.new(medic_params)
 
@@ -20,21 +20,21 @@ class MedicsController < ApplicationController
 		  render 'new'
 	  end
   end
-  
+
   def edit
 		@medic = Medic.find(params[:id])
   end
-  
+
 	def update
 		@medic = Medic.find(params[:id])
 
-		if @medic.update(params[:medic].permit(:name, :user_id, :crm, :emailM, :dadosM, :cpfM, :ddnM, :telM, :endM, :brM, :cepM, :cidM, :estM, :horasM, :diasM))
+		if @medic.update(params[:medic].permit(:crm, :workHours, :workDays, :expertise))
 			redirect_to @medic
 		else
 			render 'edit'
 		end
 	end
-	
+
   def destroy
 		@medic = Medic.find(params[:id])
 		@medic.destroy
@@ -45,6 +45,6 @@ class MedicsController < ApplicationController
 	private
 
 	def medic_params
-		params.require(:medic).permit(:name, :user_id, :crm, :emailM, :dadosM, :cpfM, :ddnM, :telM, :endM, :brM, :cepM, :cidM, :estM, :horasM, :diasM)
+		params.require(:medic).permit(:crm, :workHours, :workDays, :expertise)
 	end
 end

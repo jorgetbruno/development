@@ -27,18 +27,9 @@ ActiveRecord::Schema.define(version: 20160715033514) do
   create_table "medics", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "crm"
-    t.string   "emailM"
-    t.text     "dadosM"
-    t.string   "cpfM"
-    t.string   "ddnM"
-    t.string   "telM"
-    t.string   "endM"
-    t.string   "brM"
-    t.string   "cepM"
-    t.string   "cidM"
-    t.string   "estM"
-    t.string   "diasM"
-    t.string   "horasM"
+    t.string   "workHours"
+    t.string   "workDays"
+    t.text     "expertise"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
