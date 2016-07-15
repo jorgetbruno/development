@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160505234503) do
+ActiveRecord::Schema.define(version: 20160715033514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,36 +63,36 @@ ActiveRecord::Schema.define(version: 20160505234503) do
   add_index "patients", ["user_id"], name: "index_patients_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                            default: "", null: false
+    t.string   "encrypted_password",               default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                    default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.string   "name",                                null: false
+    t.string   "name",                                          null: false
     t.integer  "lot"
     t.string   "block"
     t.integer  "number"
-    t.string   "street",                              null: false
-    t.string   "neighborhood",                        null: false
+    t.string   "street",                                        null: false
+    t.string   "neighborhood",                                  null: false
     t.string   "complement"
-    t.string   "city",                                null: false
-    t.string   "state",                               null: false
-    t.string   "country",                             null: false
-    t.integer  "cep",                                 null: false
-    t.integer  "phoneOne",                            null: false
-    t.integer  "phoneTwo"
-    t.integer  "phoneThree"
-    t.integer  "cpf",                                 null: false
-    t.integer  "rg",                                  null: false
-    t.integer  "rgExpeditor",                         null: false
-    t.date     "birthday",                            null: false
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.string   "city",                                          null: false
+    t.string   "state",                                         null: false
+    t.string   "country",                                       null: false
+    t.integer  "cep",                                           null: false
+    t.integer  "phoneOne",               limit: 8,              null: false
+    t.integer  "phoneTwo",               limit: 8
+    t.integer  "phoneThree",             limit: 8
+    t.integer  "cpf",                    limit: 8,              null: false
+    t.integer  "rg",                     limit: 8,              null: false
+    t.integer  "rgExpeditor",                                   null: false
+    t.date     "birthday",                                      null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -5,9 +5,7 @@ class User < ActiveRecord::Base
 	has_many :nurses
 
 	validates :name         , length: {maximum: 100}            , allow_blank: false
-	validates :birthday,	inclusion: { in: 1900..Date.today.year },
-										format: { with: /(19|20)\d{2}/i},
-    									allow_blank: false
+	#validates :birthday,	inclusion: { in: 1900..Date.today.year },format: { with: /(19|20)\d{2}/i},allow_blank: false
 
 	validates :lot                        ,length: {minimum: 1}, allow_blank: false
 	validates :block                      ,length: {minimum: 1}, allow_blank: false
