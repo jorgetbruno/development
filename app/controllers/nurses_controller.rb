@@ -5,6 +5,7 @@ class NursesController < ApplicationController
 
   def new
     @nurse = Nurse.new
+    @user = @nurse.build_user
   end
 
   def show
@@ -13,13 +14,17 @@ class NursesController < ApplicationController
 
   def create
     @nurse = Nurse.new(nurse_params)
+    @user = @nurse.build_user(nurse_params[:user_attributes])
+    @user.profileable = @nurse
 
-	  if @nurse.save
-	    redirect_to @nurse
-	  else
-		  render 'new'
-	  end
-  end
+    if @user.save
+        @nurse.save
+
+        redirect_to @nurse
+    else
+        render 'new'
+    end
+end
 
   def edit
 		@nurse = Nurse.find(params[:id])
@@ -45,6 +50,6 @@ class NursesController < ApplicationController
 	private
 
 	def nurse_params
-		params.require(:nurse).permit(:user_id, :coren)
+		params.require(:nurse).permit(:user_id, :coren, user_attributes: [:name,:birthday,:lot,:block,:number,:street,:neighborhood,:complement,:city,:state,:country,:cep,:phoneOne,:phoneTwo,:phoneThree,:cpf,:rg,:rgExpeditor,:email,:password,:password_confirmation])
 	end
 end
