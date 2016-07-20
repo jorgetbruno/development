@@ -5,6 +5,7 @@ class MedicsController < ApplicationController
 
   def new
     @medic = Medic.new
+    @user = @medic.build_user
   end
 
   def show
@@ -13,13 +14,17 @@ class MedicsController < ApplicationController
 
   def create
     @medic = Medic.new(medic_params)
+    @user = @medic.build_user(medic_params[:user_attributes])
+    @user.profileable = @medic
 
-	  if @medic.save
-	    redirect_to @medic
-	  else
-		  render 'new'
-	  end
-  end
+    if @user.save
+        @medic.save
+
+        redirect_to @medic
+    else
+        render 'new'
+    end
+end
 
   def edit
 		@medic = Medic.find(params[:id])
@@ -45,6 +50,6 @@ class MedicsController < ApplicationController
 	private
 
 	def medic_params
-		params.require(:medic).permit(:crm, :workHours, :workDays, :expertise)
+		params.require(:medic).permit(:crm, :workHours, :workDays, :expertise, user_attributes: [:name,:birthday,:lot,:block,:number,:street,:neighborhood,:complement,:city,:state,:country,:cep,:phoneOne,:phoneTwo,:phoneThree,:cpf,:rg,:rgExpeditor,:email,:password,:password_confirmation])
 	end
 end
