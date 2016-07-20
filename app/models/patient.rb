@@ -1,5 +1,9 @@
 class Patient < ActiveRecord::Base
-	belongs_to :user
+  has_one :user, :as => :profileable
+
+
+  accepts_nested_attributes_for :user,  :allow_destroy => true
+  #:reject_if => lambda { |a| a[:content].blank? },
 
 	validates :motherName                        ,length: {maximum: 100}, allow_blank: false
 	validates :fatherName                        ,length: {maximum: 100}

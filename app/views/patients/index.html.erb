@@ -9,7 +9,7 @@
 	</tr>
 	<% @patients.each do |patient| %>
 	<tr>
-		<th><%= patient.user_id %></th>
+		<th><%= patient.user.name %></th>
 		<th><%= link_to 'Editar', edit_patient_path(patient) %></th>
 		<th><%= link_to 'Excluir', patient_path(patient), method: :delete, data: { confirm: 'Are you sure?' } %></th>
 	</tr>

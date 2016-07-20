@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
-	has_many :admins
-	has_many :patients
-	has_many :medics
-	has_many :nurses
+  belongs_to :profileable, :polymorphic => true
+
+  accepts_nested_attributes_for :profileable,  :allow_destroy => true
+#:reject_if => lambda { |a| a[:content].blank? },
 
 	validates :name         , length: {maximum: 100}            , allow_blank: false
 	#validates :birthday,	inclusion: { in: 1900..Date.today.year },format: { with: /(19|20)\d{2}/i},allow_blank: false

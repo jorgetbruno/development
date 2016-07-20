@@ -88,6 +88,8 @@ ActiveRecord::Schema.define(version: 20160715033514) do
     t.date     "birthday",                                      null: false
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
+    t.integer  "profileable_id"
+    t.string   "profileable_type"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
