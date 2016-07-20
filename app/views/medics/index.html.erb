@@ -1,4 +1,4 @@
-<table border="1" class="table table-hover">
+<table border="1" class="panel panel-default">
 	<tr><center><h2>Medicos Do Hospital</h2></center></tr>
 	<tr>
 		<th>Nome do Médico</th>
@@ -12,7 +12,7 @@
 
 	<tr>
 
-		<th><%= medic.user.name %></th>
+		<th><%= link_to medic.user.name, medic %></th>
 		<th><%= medic.expertise %></th>
 		<th><%= medic.workDays %></th>
 		<th><%= medic.workHours %></th>
