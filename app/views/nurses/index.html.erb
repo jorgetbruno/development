@@ -11,11 +11,9 @@
 	</tr>
 	<% @nurses.each do |nurse| %>
 	<tr>
-		<th><%= nurse.name %></th>
 		<th><%= nurse.user_id %></th>
 		<th><%= link_to 'Editar', edit_nurse_path(nurse) %></th>
 		<th><%= link_to 'Excluir', nurse_path(nurse), method: :delete, data: { confirm: 'Are you sure?' } %></th>
 	</tr>
 	<% end %>
 </table>
-

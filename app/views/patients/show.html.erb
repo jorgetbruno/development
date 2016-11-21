@@ -1,13 +1,16 @@
 <div class="col-md-2"></div>
 <div class="col-md-8">
 	<div class="panel panel-default">
-	  <div class="panel-heading"><%= @patient.name %></div>
+	  <div class="panel-heading"><%= @patient.user.name %></div>
 	  	<div class="panel-body">
-			<p class="register_number">Nome: <%= @patient.name %></p>
-			<p class="status">Email: <%= @patient.user.email %></p>
 			<p class="actions">
+
+
+
+
+
 				<%= link_to 'Editar', edit_patient_path(@patient) %>
-				
+
 				<%= link_to 'Destroy',  { action: :destroy, id: @patient.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
 			</p>
 		</div>

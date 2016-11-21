@@ -1,5 +1,8 @@
 class Nurse < ActiveRecord::Base
-	belongs_to :user
+	has_one :user, :as => :profileable
 
-	validates :coren, length: { is: 5 },numericality: { only_integer: true }
+
+  accepts_nested_attributes_for :user,  :allow_destroy => true
+
+	validates :coren, length: { is: 5 },numericality: { only_integer: true },allow_blank: false
 end

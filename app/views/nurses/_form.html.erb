@@ -10,14 +10,99 @@
 		</div>
 	<% end %>
 
-	<%= f.label :name, "Nome" %><br>
-	<%= f.text_field :name, placeholder:"Digite o nome do enfermeiro", required:"", class:"form-control" %>
 	<br>
+	<%= f.fields_for :user do |u| %>
+		<div class="field">
+			<%= u.label :name %><br />
+			<%= u.text_field :name %>
+		</div>
+		<div class="field">
+			<%= u.label :birthday %><br />
+			<%= u.date_field :birthday %>
+		</div>
+		<div class="field">
+			<%= u.label :lot %><br />
+			<%= u.text_field :lot %>
+		</div>
+		<div class="field">
+			<%= u.label :block %><br />
+			<%= u.text_field :block %>
+		</div>
+		<div class="field">
+			<%= u.label :number %><br />
+			<%= u.text_field :number %>
+		</div>
+		<div class="field">
+			<%= u.label :street %><br />
+			<%= u.text_field :street %>
+		</div>
+		<div class="field">
+			<%= u.label :neighborhood %><br />
+			<%= u.text_field :neighborhood %>
+		</div>
+		<div class="field">
+			<%= u.label :complement %><br />
+			<%= u.text_field :complement %>
+		</div>
+		<div class="field">
+			<%= u.label :city %><br />
+			<%= u.text_field :city %>
+		</div>
+		<div class="field">
+			<%= u.label :state %><br />
+			<%= u.text_field :state %>
+		</div>
+		<div class="field">
+			<%= u.label :country %><br />
+			<%= u.text_field :country %>
+		</div>
+		<div class="field">
+			<%= u.label :cep %><br />
+			<%= u.text_field :cep %>
+		</div>
+		<div class="field">
+			<%= u.label :phoneOne %><br />
+			<%= u.text_field :phoneOne %>
+		</div>
+		<div class="field">
+			<%= u.label :phoneTwo %><br />
+			<%= u.text_field :phoneTwo %>
+		</div>
+		<div class="field">
+			<%= u.label :phoneThree %><br />
+			<%= u.text_field :phoneThree %>
+		</div>
+		<div class="field">
+			<%= u.label :cpf %><br />
+			<%= u.text_field :cpf %>
+		</div>
+		<div class="field">
+			<%= u.label :rg %><br />
+			<%= u.text_field :rg %>
+		</div>
+		<div class="field">
+			<%= u.label :rgExpeditor %><br />
+			<%= u.text_field :rgExpeditor %>
+		</div>
+		<div class="field">
+			<%= u.label :email %><br />
+			<%= u.email_field :email, autofocus: true %>
+		</div>
 
-	<br>
+		<div class="field">
+			<%= f.label :password %>
+			<% if @minimum_password_length %>
+			<em>(<%= @minimum_password_length %> characters minimum)</em>
+			<% end %><br />
+			<%= u.password_field :password, autocomplete: "off" %>
+		</div>
 
-	<%= f.label :userId, "Usuário" %><br>
-	<%= f.collection_select :id, User.all, :id, :email %>
+		<div class="field">
+			<%= u.label :password_confirmation %><br />
+			<%= u.password_field :password_confirmation, autocomplete: "off" %>
+		</div>
+	<% end %>
+
 	<br>
 
 	<%= f.label :coren, "coren" %><br>

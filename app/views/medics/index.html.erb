@@ -1,23 +1,23 @@
-<table border="1" class="table table-hover">
+<table border="1" class="panel panel-default">
 	<tr><center><h2>Medicos Do Hospital</h2></center></tr>
 	<tr>
 		<th>Nome do Médico</th>
 		<th>Especialidade</th>
 		<th>Dias de Atendimento</th>
 		<th>Horário de Atendimento</th>
-		
+
 	</tr>
-	
+
 	<% @medics.each do |medic| %>
-	
+
 	<tr>
-	
-		<th><%= medic.name %></th>
-		<th><%= medic.dadosM %></th>
-		<th><%= medic.diasM %></th>
-		<th><%= medic.horasM %></th>
+
+		<th><%= link_to medic.user.name, medic %></th>
+		<th><%= medic.expertise %></th>
+		<th><%= medic.workDays %></th>
+		<th><%= medic.workHours %></th>
+
 
 	</tr>
 	<% end %>
 </table>
-	
